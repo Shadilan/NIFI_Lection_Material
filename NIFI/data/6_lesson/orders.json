@@ -1,0 +1,4 @@
+{"id": "ord-001", "customer": "Анна", "amount": 1000, "status": "completed", "region": "Москва", "tags": ["premium", "fast_delivery"]},
+{"id": "ord-002", "customer": "Борис", "amount": 500, "status": "pending", "region": "СПб", "tags": ["regular"]},
+{"id": "ord-003", "customer": "Светлана", "amount": 2000, "status": "shipped", "region": "Екатеринбург", "tags": ["premium", "gift"]},
+{"id": "ord-004", "customer": "Дмитрий", "amount": 300, "status": "completed", "region": "Москва", "tags": ["regular"]}
