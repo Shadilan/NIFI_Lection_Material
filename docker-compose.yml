@@ -33,17 +33,16 @@ services:
     ports:
       - 8443:8443/tcp
     volumes:
-      - ./NIFI/repository/database_repository:/opt/nifi/nifi-current/database_repository
-      - ./NIFI/repository/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
-      - ./NIFI/repository/content_repository:/opt/nifi/nifi-current/content_repository
-      - ./NIFI/repository/provenance_repository:/opt/nifi/nifi-current/provenance_repository
-      - ./NIFI/state:/opt/nifi/nifi-current/state
-      - ./NIFI/logs:/opt/nifi/nifi-current/logs
-      - ./NIFI/conf:/opt/nifi/nifi-current/conf
+      - nifi_database:/opt/nifi/nifi-current/database_repository
+      - nifi_flowfile:/opt/nifi/nifi-current/flowfile_repository
+      - nifi_content:/opt/nifi/nifi-current/content_repository
+      - nifi_provenance:/opt/nifi/nifi-current/provenance_repository
+      - nifi_state:/opt/nifi/nifi-current/state
+      - nifi_logs:/opt/nifi/nifi-current/logs
       - ./NIFI/nars:/opt/nifi/nifi-current/nar_extensions
-      - ./PG/postgresql-42.7.3.jar:/opt/nifi/drivers/postgresql-42.7.3.jar
+      - ./PG/drivers:/opt/nifi/drivers
       - ./NIFI/python:/opt/nifi/nifi-current/python_extensions
-      - ./NIFI/data:/data
+      - ./NIFI/source:/resource
     environment:
       SINGLE_USER_CREDENTIALS_USERNAME: admin
       # password must be 12 characters minimum
@@ -107,3 +106,10 @@ services:
       KAFKA_LOG_DIRS: "/tmp/kraft-data" # Or a persistent volume mount
     volumes:
       - ./KAFKA/KRaft-data:/tmp/kraft-data # Mount a persistent volume for data
+volumes:
+  nifi_database:
+  nifi_flowfile:
+  nifi_content:
+  nifi_provenance:
+  nifi_state:
+  nifi_logs:
