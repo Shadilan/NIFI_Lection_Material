@@ -22,6 +22,11 @@
 [Примеры скиптов русского сообщества](https://github.com/nifi-core-team/nifi-scripts)
 [Русскоязычное сообщество NIFI](https://t.me/nifiusers)
 
+## PG JDBC
+[Про выключение autocommit (ищем autocommit)](https://jdbc.postgresql.org/documentation/query/)
+[Про fetchSize настройка defaultRowFetchSize](https://jdbc.postgresql.org/documentation/use/)
+jdbc:postgresql:[//host[:port]/][database]?defaultRowFetchSize=10000
+
 ## Разработка процессоров
 ### Java
 [Докумментация разработчика](https://nifi.apache.org/nifi-docs/developer-guide.html)
